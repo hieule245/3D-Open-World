@@ -60,11 +60,14 @@
     <Analyzer Include="D:\Game-Work\Unity Hub\Source\2022.3.14f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\DragDrop.cs" />
     <Compile Include="Assets\Rocks\Scripts\CameraFreeflight.cs" />
     <Compile Include="Assets\Rabbits\Demo\Scripts\AnimatorParamatersChange.cs" />
     <Compile Include="Assets\Script\InteractableObject.cs" />
     <Compile Include="Assets\Script\SelectionManager.cs" />
     <Compile Include="Assets\Script\MouseMovement.cs" />
+    <Compile Include="Assets\Script\InventorySystem.cs" />
+    <Compile Include="Assets\Script\ItemSlot.cs" />
     <Compile Include="Assets\Script\AI Movement.cs" />
     <Compile Include="Assets\Script\PlayerMovement.cs" />
   </ItemGroup>
