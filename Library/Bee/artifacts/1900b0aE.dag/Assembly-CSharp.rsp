@@ -358,6 +358,8 @@
 "Assets/Rabbits/Demo/Scripts/AnimatorParamatersChange.cs"
 "Assets/Rocks/Scripts/CameraFreeflight.cs"
 "Assets/Script/AI Movement.cs"
+"Assets/Script/BluePrint.cs"
+"Assets/Script/CraftingSystem.cs"
 "Assets/Script/DragDrop.cs"
 "Assets/Script/InteractableObject.cs"
 "Assets/Script/InventorySystem.cs"
@@ -365,6 +367,7 @@
 "Assets/Script/MouseMovement.cs"
 "Assets/Script/PlayerMovement.cs"
 "Assets/Script/SelectionManager.cs"
+"Assets/Stylized Tools/Scripts/OpenURL.cs"
 -langversion:9.0
 
 /deterministic

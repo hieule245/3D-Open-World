@@ -8,6 +8,7 @@ public class InventorySystem : MonoBehaviour
 
     public static InventorySystem Instance { get; set; }
 
+    [SerializeField] public GameObject statusScreenUI;
     [SerializeField] public GameObject inventoryScreenUI;
     public List<GameObject> slotList = new List<GameObject>();
     public List<string> ItemList = new List<string>();
@@ -53,19 +54,20 @@ public class InventorySystem : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.I) && !isOpen)
+        if (Input.GetKeyDown(KeyCode.E) && !isOpen)
         {
-
-            Debug.Log("i is pressed");
-            inventoryScreenUI.SetActive(true);
+            statusScreenUI.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             isOpen = true;
 
         }
-        else if (Input.GetKeyDown(KeyCode.I) && isOpen)
+        else if (Input.GetKeyDown(KeyCode.E) && isOpen)
         {
-            inventoryScreenUI.SetActive(false);
-            Cursor.lockState = CursorLockMode.Locked;
+            statusScreenUI.SetActive(false);
+            if (!CraftingSystem.Instance.isOpen)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+            }
             isOpen = false;
         }
     }
@@ -107,6 +109,37 @@ public class InventorySystem : MonoBehaviour
         else
         {
             return false;
+        }
+    }
+
+    public void RemoveItem(string name, int amountItemToRemove)
+    {
+        int counter = amountItemToRemove;
+        for(var i = slotList.Count - 1; i >= 0; i--)
+        {
+            if (slotList[i].transform.childCount > 0)
+            {
+                if(slotList[i].transform.GetChild(0).name == name + "Clone" && counter != 0)
+                {
+                    Destroy(slotList[i].transform.GetChild(0).gameObject);
+                    counter -= 1;
+                }
+            }
+        }
+    }
+
+    public void RecalculeList()
+    {
+        ItemList.Clear();
+        foreach (GameObject slot in slotList) 
+        {
+            if(slot.transform.childCount == 0)
+            {
+                string name = slot.transform.GetChild(0).name;
+                string str2 = "(Clone)";
+                string result = name.Replace(str2, "");
+                ItemList.Add(result);
+            }
         }
     }
 }
