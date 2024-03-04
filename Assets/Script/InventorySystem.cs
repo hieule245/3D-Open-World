@@ -12,8 +12,8 @@ public class InventorySystem : MonoBehaviour
     [SerializeField] public GameObject inventoryScreenUI;
     public List<GameObject> slotList = new List<GameObject>();
     public List<string> ItemList = new List<string>();
-    private GameObject ItemtoAdds;
-    private GameObject WhichSlotToEquip;
+    public GameObject ItemtoAdds;
+    public GameObject WhichSlotToEquip;
 
     public bool isFull;
     public bool isOpen;

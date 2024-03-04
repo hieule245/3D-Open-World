@@ -47,7 +47,7 @@ public class CraftingSystem : MonoBehaviour
         craftAxeBTN.onClick.AddListener(delegate { CraftAnyItem(AxeBLP); });
     }
 
-    void CraftAnyItem(BluePrint bluePrintToCraft)
+    public void CraftAnyItem(BluePrint bluePrintToCraft)
     {
         InventorySystem.Instance.AddInventory(bluePrintToCraft.ItemName);
 
@@ -100,7 +100,7 @@ public class CraftingSystem : MonoBehaviour
         }
     }
 
-    private void RefreshNeededItems()
+    public void RefreshNeededItems()
     {
         int stone_count = 0;
         int stick_count = 0;
